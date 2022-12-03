@@ -1,0 +1,13 @@
+nav {
+	background-color: var(--white);
+	padding: 1rem 0;
+}
+
+nav .container {
+	padding: 0 0.5rem;
+}
+
+nav .brand {
+	margin: 0;
+	font-size: 20px;
+}
