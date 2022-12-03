@@ -1,9 +1,11 @@
 :root {
-	--gray-100: #f3f4f6;
-	--gray-700: #374151;
-	--indigo-800: #3730a3;
-	--indigo-300: #a5b4fc;
-	--white: #ffffff;
+	--gray-01: rgb(241, 245, 249);
+	--gray-02: rgb(52, 66, 86);
+	--indigo-01: rgb(178, 183, 255);
+	--indigo-02: rgb(86, 97, 179);
+	--indigo-03: rgba(47, 54, 95);
+	--indigo-04: rgb(25, 30, 56);
+	--white: rgb(255, 255, 255);
 }
 
 * {
@@ -12,8 +14,8 @@
 }
 
 body {
-	background-color: var(--gray-100);
-	color: var(--gray-700);
+	background-color: var(--gray-01);
+	color: var(--gray-02);
 }
 
 .container {
@@ -25,6 +27,28 @@ body {
 @media (min-width: 576px) {
 	.container {
 		max-width: 540px;
+	}
+
+	nav button {
+		display: none;
+	}
+
+	.navbar-collapse {
+		display: block;
+		position: relative !important;
+	}
+
+	.navbar-container {
+		display: block !important;
+	}
+
+	.navbar {
+		flex-direction: row !important;
+		transform: none !important;
+		inset: inherit !important;
+		position: relative !important;
+		background-color: inherit !important;
+		padding: 0 !important;
 	}
 }
 

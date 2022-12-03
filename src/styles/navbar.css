@@ -1,13 +1,68 @@
 nav {
-	background-color: var(--white);
-	padding: 1rem 0;
+	background-color: var(--indigo-04);
+	color: white;
+	padding: 0.5rem 0;
 }
 
 nav .container {
-	padding: 0 0.5rem;
+	padding: 0 1rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 nav .brand {
-	margin: 0;
-	font-size: 20px;
+	padding: 5px 0;
+	font-weight: 500;
+}
+
+nav button {
+	height: min-content;
+	padding: 5px 0;
+}
+
+.navbar-collapse {
+	position: fixed;
+	inset: 0;
+	background: black;
+	opacity: 0.2;
+	display: none;
+}
+
+.navbar-collapse.show {
+	display: block;
+}
+
+.navbar-container {
+	position: relative;
+	display: none;
+}
+
+.navbar-container.d-contents {
+	display: contents;
+}
+
+.navbar {
+	display: flex;
+	flex-direction: column;
+	inset: 0px 0px auto auto;
+	position: absolute;
+	transform: translate3d(-23.3333px, 50px, 0px);
+	background-color: var(--indigo-03);
+	color: var(--indigo-01);
+	padding: 1rem 2rem;
+	border-radius: 0.25rem;
+}
+
+nav .navbar a {
+	padding: 0.75rem 0.5rem;
+	color: var(--indigo-01);
+}
+
+nav .navbar a:hover {
+	color: var(--white);
+}
+
+nav .navbar a:focus {
+	color: var(--white);
 }
