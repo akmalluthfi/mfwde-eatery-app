@@ -18,9 +18,45 @@ body {
 	color: var(--gray-02);
 }
 
+.skip-to-content {
+	position: absolute;
+	z-index: 9999999;
+	top: 8px;
+	left: -145px;
+	background-color: var(--gray-01);
+	padding: 0.75rem;
+	font-weight: bold;
+}
+
+.skip-to-content:focus {
+	left: 8px;
+}
+
 .container {
 	width: 100%;
 	margin: auto;
+}
+
+main {
+	margin-top: 62px;
+}
+
+.hero-image {
+	margin-bottom: 1.5rem;
+}
+
+.hero-image img {
+	width: 100%;
+	max-height: 512px;
+	object-fit: cover;
+	object-position: top;
+}
+
+footer {
+	padding: 1rem;
+	text-align: center;
+	background-color: var(--indigo-03);
+	color: var(--white);
 }
 
 /* Small devices (landscape phones, 576px and up) */
@@ -29,7 +65,7 @@ body {
 		max-width: 540px;
 	}
 
-	nav button {
+	header button {
 		display: none;
 	}
 
@@ -42,7 +78,7 @@ body {
 		display: block !important;
 	}
 
-	.navbar {
+	nav {
 		flex-direction: row !important;
 		transform: none !important;
 		inset: inherit !important;
@@ -57,6 +93,10 @@ body {
 	.container {
 		max-width: 720px;
 	}
+
+	.restaurant-list {
+		grid-template-columns: repeat(2, 50%) !important;
+	}
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -70,6 +110,10 @@ body {
 @media (min-width: 1200px) {
 	.container {
 		max-width: 1140px;
+	}
+
+	.restaurant-list {
+		grid-template-columns: repeat(3, calc(100% / 3)) !important;
 	}
 }
 

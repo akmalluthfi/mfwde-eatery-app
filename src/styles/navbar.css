@@ -1,24 +1,27 @@
-nav {
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
 	background-color: var(--indigo-04);
 	color: white;
 	padding: 0.5rem 0;
 }
 
-nav .container {
+header .container {
 	padding: 0 1rem;
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
 }
 
-nav .brand {
-	padding: 5px 0;
+header .brand {
 	font-weight: 500;
+	font-size: 30px;
 }
 
-nav button {
+header button {
 	height: min-content;
-	padding: 5px 0;
+	padding: 0.75rem;
 }
 
 .navbar-collapse {
@@ -42,7 +45,7 @@ nav button {
 	display: contents;
 }
 
-.navbar {
+nav {
 	display: flex;
 	flex-direction: column;
 	inset: 0px 0px auto auto;
@@ -54,15 +57,15 @@ nav button {
 	border-radius: 0.25rem;
 }
 
-nav .navbar a {
+header nav a {
 	padding: 0.75rem 0.5rem;
 	color: var(--indigo-01);
 }
 
-nav .navbar a:hover {
+header nav a:hover {
 	color: var(--white);
 }
 
-nav .navbar a:focus {
+header nav a:focus {
 	color: var(--white);
 }

@@ -1,0 +1,56 @@
+.restaurant-section h2 {
+	text-align: center;
+	margin-bottom: 1.5rem;
+	font-size: 1.5rem;
+	line-height: 2rem;
+}
+
+.restaurant-list {
+	padding: 0 2rem;
+	margin-bottom: 1.5rem;
+	display: grid;
+	grid-template-columns: 100%;
+	gap: 2rem;
+}
+
+.restaurant-card {
+	border-radius: 0.375rem;
+	background-color: var(--white);
+	overflow: hidden;
+	border-width: 1px;
+	position: relative;
+	z-index: -1;
+}
+
+.restaurant-card .badge-location {
+	top: 1rem;
+	position: absolute;
+	padding: 0.5rem 1rem;
+	background-color: rgba(0, 0, 0, 0.7);
+	color: var(--gray-01);
+	border-width: 1px;
+	border-left-width: 0;
+	border-color: rgba(0, 0, 0, 0.7);
+	border-top-right-radius: 0.375rem;
+	border-bottom-right-radius: 0.375rem;
+}
+
+.restaurant-card h3 {
+	font-size: 1.25rem;
+	line-height: 1.75rem;
+	margin-bottom: 1rem;
+}
+
+.restaurant-card h4 {
+	font-size: 1.125rem;
+	line-height: 1.75rem;
+	margin-bottom: 0.5rem;
+}
+
+.restaurant-card p {
+	color: var(--gray-02);
+}
+
+.restaurant-card .body {
+	padding: 1rem;
+}
