@@ -1,71 +1,70 @@
 header {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	background-color: var(--indigo-04);
-	color: white;
-	padding: 0.5rem 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--indigo-04);
+  color: white;
+  padding: 0.5rem 0;
 }
 
 header .container {
-	padding: 0 1rem;
-	display: flex;
-	justify-content: space-between;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
 }
 
-header .brand {
-	font-weight: 500;
-	font-size: 30px;
+header .brand img {
+  height: 48px;
 }
 
 header button {
-	height: min-content;
-	padding: 0.75rem;
+  height: min-content;
+  padding: 0.75rem;
 }
 
 .navbar-collapse {
-	position: fixed;
-	inset: 0;
-	background: black;
-	opacity: 0.2;
-	display: none;
+  position: fixed;
+  inset: 0;
+  background: black;
+  opacity: 0.2;
+  display: none;
 }
 
 .navbar-collapse.show {
-	display: block;
+  display: block;
 }
 
 .navbar-container {
-	position: relative;
-	display: none;
+  position: relative;
+  display: none;
 }
 
 .navbar-container.d-contents {
-	display: contents;
+  display: contents;
 }
 
 nav {
-	display: flex;
-	flex-direction: column;
-	inset: 0px 0px auto auto;
-	position: absolute;
-	transform: translate3d(-23.3333px, 50px, 0px);
-	background-color: var(--indigo-03);
-	color: var(--indigo-01);
-	padding: 1rem 2rem;
-	border-radius: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  inset: 0px 0px auto auto;
+  position: absolute;
+  transform: translate3d(-23.3333px, 50px, 0px);
+  background-color: var(--indigo-03);
+  color: var(--indigo-01);
+  padding: 1rem 2rem;
+  border-radius: 0.25rem;
 }
 
 header nav a {
-	padding: 0.75rem 0.5rem;
-	color: var(--indigo-01);
+  padding: 0.75rem 0.5rem;
+  color: var(--indigo-01);
 }
 
 header nav a:hover {
-	color: var(--white);
+  color: var(--white);
 }
 
 header nav a:focus {
-	color: var(--white);
+  color: var(--white);
 }

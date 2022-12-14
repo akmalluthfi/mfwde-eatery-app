@@ -1,35 +1,39 @@
 class RestaurantCard extends HTMLElement {
-	connectedCallback() {
-		this.render();
-	}
+  connectedCallback() {
+    this.render();
+  }
 
-	/**
-	 * @param {any} restaurant
-	 */
-	set restaurant(restaurant) {
-		this._restaurant = restaurant;
-	}
+  /**
+   * @param {any} restaurant
+   */
+  set restaurant(restaurant) {
+    this._restaurant = restaurant;
+  }
 
-	get restaurant() {
-		return this._restaurant;
-	}
+  get restaurant() {
+    return this._restaurant;
+  }
 
-	render() {
-		this.innerHTML = `
+  render() {
+    this.innerHTML = `
 			<div class="restaurant-card">
-				<div class="badge-location">${this._restaurant.city}</div>
 				<img
-					src="${this._restaurant.pictureId}"
+					src="https://restaurant-api.dicoding.dev/images/small/${this._restaurant.pictureId}"
 					alt="${this._restaurant.name}"
 				/>
 				<div class="body">
-					<h4>Rating : ${this._restaurant.rating}</h4>
-					<h3>${this._restaurant.name}</h3>
+          <h3><a href="/">${this._restaurant.name}</a></h3>
+          <div class="rating">
+            <span>&#x2B50;</span>
+            <span>${this._restaurant.rating}</span>
+            <span class="divider"> | </span>
+            <span>${this._restaurant.city}</span>
+          </div>
 					<p>${this._restaurant.description}</p>
 				</div>
 			</div>
 		`;
-	}
+  }
 }
 
-customElements.define("restaurant-card", RestaurantCard);
+customElements.define('restaurant-card', RestaurantCard);

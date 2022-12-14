@@ -1,125 +1,130 @@
+@import url('./preflight.css');
+@import url('./navbar.css');
+@import url('./restaurant.css');
+
 :root {
-	--gray-01: rgb(241, 245, 249);
-	--gray-02: rgb(52, 66, 86);
-	--indigo-01: rgb(178, 183, 255);
-	--indigo-02: rgb(86, 97, 179);
-	--indigo-03: rgba(47, 54, 95);
-	--indigo-04: rgb(25, 30, 56);
-	--white: rgb(255, 255, 255);
+  --gray-01: rgb(241, 245, 249);
+  --gray-02: rgb(52, 66, 86);
+  --indigo-01: rgb(178, 183, 255);
+  --indigo-02: rgb(86, 97, 179);
+  --indigo-03: rgba(47, 54, 95);
+  --indigo-04: rgb(25, 30, 56);
+  --white: rgb(255, 255, 255);
 }
 
 * {
-	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-		Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 body {
-	background-color: var(--gray-01);
-	color: var(--gray-02);
+  background-color: var(--gray-01);
+  color: var(--gray-02);
 }
 
 .skip-to-content {
-	position: absolute;
-	z-index: 9999999;
-	top: 8px;
-	left: -145px;
-	background-color: var(--gray-01);
-	padding: 0.75rem;
-	font-weight: bold;
+  position: absolute;
+  z-index: 9999999;
+  top: 8px;
+  left: -145px;
+  background-color: var(--gray-01);
+  padding: 0.75rem;
+  font-weight: bold;
 }
 
 .skip-to-content:focus {
-	left: 8px;
+  left: 8px;
 }
 
 .container {
-	width: 100%;
-	margin: auto;
+  width: 100%;
+  margin: auto;
 }
 
 main {
-	margin-top: 62px;
+  min-height: calc(100vh - 108px);
+  margin-top: 62px;
 }
 
 .hero-image {
-	margin-bottom: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .hero-image img {
-	width: 100%;
-	max-height: 512px;
-	object-fit: cover;
-	object-position: top;
+  width: 100%;
+  max-height: 512px;
+  object-fit: cover;
+  object-position: top;
 }
 
 footer {
-	padding: 1rem;
-	text-align: center;
-	background-color: var(--indigo-03);
-	color: var(--white);
+  padding: 1rem;
+  text-align: center;
+  background-color: var(--indigo-03);
+  color: var(--white);
 }
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
-	.container {
-		max-width: 540px;
-	}
+  .container {
+    max-width: 540px;
+  }
 
-	header button {
-		display: none;
-	}
+  header button {
+    display: none;
+  }
 
-	.navbar-collapse {
-		display: block;
-		position: relative !important;
-	}
+  .navbar-collapse {
+    display: block;
+    position: relative !important;
+  }
 
-	.navbar-container {
-		display: block !important;
-	}
+  .navbar-container {
+    display: block !important;
+  }
 
-	nav {
-		flex-direction: row !important;
-		transform: none !important;
-		inset: inherit !important;
-		position: relative !important;
-		background-color: inherit !important;
-		padding: 0 !important;
-	}
+  nav {
+    flex-direction: row !important;
+    transform: none !important;
+    inset: inherit !important;
+    position: relative !important;
+    background-color: inherit !important;
+    padding: 0 !important;
+  }
 }
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-	.container {
-		max-width: 720px;
-	}
+  .container {
+    max-width: 720px;
+  }
 
-	.restaurant-list {
-		grid-template-columns: repeat(2, 50%) !important;
-	}
+  .restaurant-list {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
 }
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-	.container {
-		max-width: 960px;
-	}
+  .container {
+    max-width: 960px;
+  }
 }
 
 /* X-Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-	.container {
-		max-width: 1140px;
-	}
+  .container {
+    max-width: 1140px;
+  }
 
-	.restaurant-list {
-		grid-template-columns: repeat(3, calc(100% / 3)) !important;
-	}
+  .restaurant-list {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
 }
 
 /* XX-Large devices (larger desktops, 1400px and up) */
 @media (min-width: 1400px) {
-	.container {
-		max-width: 1320px;
-	}
+  .container {
+    max-width: 1320px;
+  }
 }
