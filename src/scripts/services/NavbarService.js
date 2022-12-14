@@ -1,8 +1,9 @@
-export default class NavbarService {
+export default class {
   constructor({ navToggle, navCollapse, navContainer }) {
     this._navToggle = navToggle;
     this._navCollapse = navCollapse;
     this._navContainer = navContainer;
+    this._navItems = navContainer.querySelectorAll('.nav-item');
 
     this._initialListener();
   }
@@ -14,6 +15,12 @@ export default class NavbarService {
 
     this._navCollapse.addEventListener('click', (event) => {
       this._handleCollapse(event);
+    });
+
+    this._navItems.forEach((navItem) => {
+      navItem.addEventListener('click', (event) => {
+        this._handleCollapse(event);
+      });
     });
   }
 

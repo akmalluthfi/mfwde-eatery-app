@@ -1,10 +1,15 @@
 import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/main.css';
-
-import RestaurantService from './services/RestaurantService.js';
+import './components/Loader';
 import NavbarService from './services/NavbarService.js';
+import AppService from './services/AppService';
 
-document.addEventListener('DOMContentLoaded', function () {
+const app = new AppService(document.getElementById('main-content'));
+
+window.addEventListener('load', () => {
+  // start-app
+  app.render();
+
   // handle year in footer
   document.getElementById('year').innerHTML = new Date().getFullYear();
 
@@ -14,8 +19,8 @@ document.addEventListener('DOMContentLoaded', function () {
     navCollapse: document.querySelector('.navbar-collapse'),
     navContainer: document.querySelector('.navbar-container'),
   });
+});
 
-  // handle restaurant list
-  const restaurantService = new RestaurantService();
-  restaurantService.renderRestaurants();
+window.addEventListener('hashchange', () => {
+  app.render();
 });
