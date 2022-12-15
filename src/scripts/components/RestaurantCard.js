@@ -22,7 +22,7 @@ class RestaurantCard extends HTMLElement {
 					alt="${this._restaurant.name}"
 				/>
 				<div class="body">
-          <h3><a href="/">${this._restaurant.name}</a></h3>
+          <h3><a href="#/detail/${this._restaurant.id}">${this._restaurant.name}</a></h3>
           <div class="rating">
             <span>&#x2B50;</span>
             <span>${this._restaurant.rating}</span>

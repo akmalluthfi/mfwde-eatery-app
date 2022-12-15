@@ -8,7 +8,7 @@ const app = new AppService(document.getElementById('main-content'));
 
 window.addEventListener('load', () => {
   // start-app
-  app.render();
+  // app.render();
 
   // handle year in footer
   document.getElementById('year').innerHTML = new Date().getFullYear();
@@ -22,5 +22,5 @@ window.addEventListener('load', () => {
 });
 
 window.addEventListener('hashchange', () => {
-  app.render();
+  // app.render();
 });

@@ -1,6 +1,7 @@
 @import url('./preflight.css');
 @import url('./navbar.css');
 @import url('./restaurant.css');
+@import url('./restaurant-detail.css');
 
 :root {
   --gray-01: rgb(241, 245, 249);
