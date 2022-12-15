@@ -1,10 +1,11 @@
 import RestaurantService from '../services/RestaurantService';
+import Logo from '../../images/heros/hero-image_1.jpg';
 
 export default class Home {
   static render() {
     return `
       <section class="hero-image">
-        <img src="./images/heros/hero-image_1.jpg" alt="" />
+        <img src="${Logo}" alt="" />
       </section>
 
       <section class="container restaurant-section">

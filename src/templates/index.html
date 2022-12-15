@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Eatery App</title>
 
-    <link rel="icon" href="./favicon.ico" sizes="any" />
-    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+    <link rel="icon" href="./assets/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" />
 
     <!-- <link rel="manifest" href="/manifest.webmanifest" /> -->
   </head>
@@ -18,22 +18,10 @@
       <div class="container">
         <!-- <a class="brand">eatery</a> -->
         <a class="brand" href="/">
-          <img src="./images/logo/rectangle.png" alt="Eatery" />
+          <img src="./assets/images/rectangle.png" alt="Eatery" />
         </a>
         <button type="button" id="navbar-toggle">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            fill="currentColor"
-            class="bi bi-list"
-            viewBox="0 0 20 20"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"
-            />
-          </svg>
+          <i class="fa-solid fa-bars fa-xl"></i>
         </button>
         <div class="navbar-collapse"></div>
         <div class="navbar-container">
@@ -54,6 +42,9 @@
       </article>
     </main>
 
-    <footer>Copyright &copy; <span id="year">2022</span> - eatery App</footer>
+    <footer>
+      Copyright <i class="fa-regular fa-copyright"></i>
+      <span id="year">2022</span> - eatery
+    </footer>
   </body>
 </html>

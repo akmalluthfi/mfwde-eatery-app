@@ -3,6 +3,10 @@
 @import url('./restaurant.css');
 @import url('./restaurant-detail.css');
 
+@import url('./fontawesome.css');
+@import url('./solid.css');
+@import url('./regular.css');
+
 :root {
   --gray-01: rgb(241, 245, 249);
   --gray-02: rgb(52, 66, 86);

@@ -18,6 +18,22 @@ module.exports = merge(common, {
           },
         ],
       },
+      {
+        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        type: 'asset/resource',
+        generator: {
+          publicPath: 'dist/assets/images/',
+          outputPath: 'assets/images/',
+        },
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        type: 'asset/resource',
+        generator: {
+          publicPath: 'dist/assets/fonts/',
+          outputPath: 'assets/fonts/',
+        },
+      },
     ],
   },
 });
