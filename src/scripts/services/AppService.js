@@ -9,8 +9,13 @@ export default class AppService {
   async render() {
     const route = RouteService.getRoute();
     const page = routes[route];
-    this._content.innerHTML = page.render();
 
+    if (!page) {
+      this._content.innerHTML = '<h1>Not Found</h1>';
+      return;
+    }
+
+    this._content.innerHTML = page.render();
     await page.afterRender();
   }
 }

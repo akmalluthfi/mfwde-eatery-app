@@ -15,12 +15,12 @@ header .container {
 }
 
 header .brand img {
-  height: 48px;
+  height: 44px;
 }
 
 header button {
   height: min-content;
-  padding: 0.75rem;
+  padding: 10px 11.5px;
 }
 
 .navbar-collapse {
@@ -53,11 +53,11 @@ nav {
   background-color: var(--indigo-03);
   color: var(--indigo-01);
   padding: 1rem 2rem;
-  border-radius: 0.25rem;
+  border-radius: var(--rounded);
 }
 
 header nav a {
-  padding: 0.75rem 0.5rem;
+  padding: 0.625rem 0.5rem;
   color: var(--indigo-01);
 }
 

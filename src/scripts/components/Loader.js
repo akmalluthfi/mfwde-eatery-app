@@ -6,7 +6,7 @@ class Loader extends HTMLElement {
   render() {
     this.innerHTML = `
       <div class="loader-container">
-        <div class="loader"></div>
+        <i class="fa-solid fa-spinner fa-spin-pulse fa-3x"></i>
       </div>
     `;
   }

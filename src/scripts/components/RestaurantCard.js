@@ -16,22 +16,22 @@ class RestaurantCard extends HTMLElement {
 
   render() {
     this.innerHTML = `
-			<div class="restaurant-card">
+			<article class="restaurant-card">
 				<img
 					src="https://restaurant-api.dicoding.dev/images/small/${this._restaurant.pictureId}"
 					alt="${this._restaurant.name}"
 				/>
 				<div class="body">
-          <h3><a href="#/detail/${this._restaurant.id}">${this._restaurant.name}</a></h3>
-          <div class="rating">
-            <span>&#x2B50;</span>
-            <span>${this._restaurant.rating}</span>
-            <span class="divider"> | </span>
-            <span>${this._restaurant.city}</span>
-          </div>
+          <h2><a href="#/detail/${this._restaurant.id}">${this._restaurant.name}</a></h2>
+          <h6 class="rating">
+            <i class="fa-solid fa-star"></i>
+            ${this._restaurant.rating}
+            <span class="divider">&bull;</span>
+            ${this._restaurant.city}
+          </h6>
 					<p>${this._restaurant.description}</p>
 				</div>
-			</div>
+			</article>
 		`;
   }
 }

@@ -1,2 +1,164 @@
-article.restaurant {
+.restaurant-detail {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-bottom: 3rem;
+}
+
+.restaurant-main-info .image {
+  margin-bottom: 1rem;
+  border-radius: var(--rounded);
+  box-shadow: var(--shadow);
+  min-height: 16rem;
+  object-fit: cover;
+  object-position: center;
+}
+
+.restaurant-main-info .profile {
+  margin-bottom: 1rem;
+}
+
+.restaurant-main-info .profile .title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.restaurant-main-info .profile .title .btn-fav {
+  color: red;
+  padding: 0.625rem;
+}
+
+.restaurant-main-info .rating {
+  color: var(--muted);
+  margin-bottom: 0.5rem;
+}
+
+.restaurant-main-info .rating .divider {
+  margin: 0 0.5rem;
+}
+
+.restaurant-main-info .info {
+  color: var(--muted);
+}
+
+.restaurant-main-info .info span {
+  color: initial !important;
+}
+
+.restaurant-main-info .description {
+  margin: 1.5rem 0;
+}
+
+.restaurant-secondary-info .menus {
+  margin-bottom: 1.5rem;
+}
+
+.restaurant-secondary-info .menus .title {
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+}
+
+.restaurant-secondary-info .menus .title .divider {
+  margin: 0 0.5rem;
+}
+
+.restaurant-secondary-info .menus .type {
+  color: var(--muted);
+}
+
+.restaurant-secondary-info .menus .menu-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.restaurant-secondary-info .menus .menu-card {
+  padding: 1rem;
+  text-align: center;
+  border-radius: var(--rounded);
+  box-shadow: var(--shadow);
+  background-color: white;
+  font-weight: 500;
+}
+
+.restaurant-secondary-info .reviews {
+  margin-bottom: 1.5rem;
+}
+
+.restaurant-secondary-info .reviews .title {
+  margin-bottom: 1rem;
+}
+
+.restaurant-secondary-info .reviews .review-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.restaurant-secondary-info .reviews .review-card {
+  padding: 1rem;
+  background-color: white;
+  border-radius: var(--rounded);
+  box-shadow: var(--shadow);
+}
+
+.restaurant-secondary-info .reviews .review-card .date-created {
+  margin-bottom: 0.5rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.restaurant-secondary-info .reviews .btn-add-review {
+  text-align: center;
+  background-color: var(--indigo-02);
+  color: white;
+  border-radius: var(--rounded);
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1rem;
+  padding: 0.75rem 1.5rem;
+  display: block;
+  margin-left: auto;
+  margin-top: 2rem;
+}
+
+.restaurant-secondary-info .reviews .btn-add-review:hover {
+  background-color: var(--orange);
+}
+
+.restaurant-secondary-info .form-review {
+  padding: 2rem 1.5rem;
+  background-color: white;
+  border-radius: var(--rounded);
+  box-shadow: var(--shadow);
+}
+
+form > .form-group {
+  margin-bottom: 1rem;
+}
+
+form > .form-group > .form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+form > .form-group > .form-control {
+  background-color: white;
+  line-height: 1.5;
+  padding: 0.5rem;
+  text-align: left;
+  appearance: none;
+  border-radius: 0.25rem;
+  border-width: 1px;
+  display: block;
+  position: relative;
+  width: 100%;
+}
+
+form > .form-group > .form-control:focus {
+  outline: none;
+  border-color: var(--indigo-02);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
 }

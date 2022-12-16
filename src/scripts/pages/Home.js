@@ -4,23 +4,22 @@ import Logo from '../../images/heros/hero-image_1.jpg';
 export default class Home {
   static render() {
     return `
-      <section class="hero-image">
-        <img src="${Logo}" alt="" />
-      </section>
+      <img class="hero-image" src="${Logo}" alt="" />
+      <article class="container restaurant-section">
+        <h1 class="title">Explore Restaurant</h1>
 
-      <section class="container restaurant-section">
-        <h2>Explore Restaurant</h2>
-
-        <div class="restaurant-list" id="restaurant-list">
+        <section class="restaurant-list" id="restaurant-list">
           <load-effect></load-effect>
-        </div>
-      </section>
+        </section>
+      </article>
     `;
   }
 
   static async afterRender() {
     // handle restaurant list
-    const restaurantService = new RestaurantService();
+    const restaurantService = new RestaurantService(
+      document.getElementById('restaurant-list')
+    );
     await restaurantService.renderRestaurants();
   }
 }
