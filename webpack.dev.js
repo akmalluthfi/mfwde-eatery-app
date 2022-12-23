@@ -17,24 +17,4 @@ module.exports = merge(common, {
     },
     compress: true,
   },
-  module: {
-    rules: [
-      {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: 'asset/resource',
-        generator: {
-          publicPath: 'assets/images/',
-          outputPath: 'assets/images/',
-        },
-      },
-      {
-        test: /\.(woff|woff2|eot|ttf|otf)$/i,
-        type: 'asset/resource',
-        generator: {
-          publicPath: 'assets/fonts/',
-          outputPath: 'assets/fonts/',
-        },
-      },
-    ],
-  },
 });

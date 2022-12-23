@@ -1,5 +1,5 @@
-const common = require('./webpack.common');
 const { merge } = require('webpack-merge');
+const common = require('./webpack.common');
 
 module.exports = merge(common, {
   mode: 'production',
@@ -17,22 +17,6 @@ module.exports = merge(common, {
             },
           },
         ],
-      },
-      {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: 'asset/resource',
-        generator: {
-          publicPath: 'dist/assets/images/',
-          outputPath: 'assets/images/',
-        },
-      },
-      {
-        test: /\.(woff|woff2|eot|ttf|otf)$/i,
-        type: 'asset/resource',
-        generator: {
-          publicPath: 'dist/assets/fonts/',
-          outputPath: 'assets/fonts/',
-        },
       },
     ],
   },

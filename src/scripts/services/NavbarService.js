@@ -1,36 +1,36 @@
-export default class {
+class NavbarService {
   constructor({ navToggle, navCollapse, navContainer }) {
-    this._navToggle = navToggle;
-    this._navCollapse = navCollapse;
-    this._navContainer = navContainer;
-    this._navItems = navContainer.querySelectorAll('.nav-item');
-
-    this._initialListener();
+    this.navToggle = navToggle;
+    this.navCollapse = navCollapse;
+    this.navContainer = navContainer;
+    this.navItems = navContainer.querySelectorAll('.nav-item');
   }
 
-  _initialListener() {
-    this._navToggle.addEventListener('click', (event) => {
-      this._handleToggle(event);
+  init() {
+    this.navToggle.addEventListener('click', (event) => {
+      this.handleToggle(event);
     });
 
-    this._navCollapse.addEventListener('click', (event) => {
-      this._handleCollapse(event);
+    this.navCollapse.addEventListener('click', (event) => {
+      this.handleCollapse(event);
     });
 
-    this._navItems.forEach((navItem) => {
+    this.navItems.forEach((navItem) => {
       navItem.addEventListener('click', (event) => {
-        this._handleCollapse(event);
+        this.handleCollapse(event);
       });
     });
   }
 
-  _handleToggle(event) {
-    this._navCollapse.classList.add('show');
-    this._navContainer.classList.add('d-contents');
+  handleToggle() {
+    this.navCollapse.classList.add('show');
+    this.navContainer.classList.add('d-contents');
   }
 
-  _handleCollapse(event) {
-    this._navCollapse.classList.remove('show');
-    this._navContainer.classList.remove('d-contents');
+  handleCollapse() {
+    this.navCollapse.classList.remove('show');
+    this.navContainer.classList.remove('d-contents');
   }
 }
+
+export default NavbarService;

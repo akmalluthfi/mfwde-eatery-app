@@ -4,6 +4,10 @@
   margin-bottom: 3rem;
 }
 
+.restaurant-main-info {
+  display: block;
+}
+
 .restaurant-main-info .image {
   margin-bottom: 1rem;
   border-radius: var(--rounded);
@@ -49,8 +53,13 @@
   margin: 1.5rem 0;
 }
 
+.restaurant-secondary-info {
+  display: block;
+}
+
 .restaurant-secondary-info .menus {
   margin-bottom: 1.5rem;
+  display: block;
 }
 
 .restaurant-secondary-info .menus .title {
@@ -84,6 +93,7 @@
 
 .restaurant-secondary-info .reviews {
   margin-bottom: 1.5rem;
+  display: block;
 }
 
 .restaurant-secondary-info .reviews .title {
@@ -102,6 +112,7 @@
   background-color: white;
   border-radius: var(--rounded);
   box-shadow: var(--shadow);
+  display: block;
 }
 
 .restaurant-secondary-info .reviews .review-card .date-created {

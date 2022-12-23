@@ -1,21 +1,36 @@
 import RouteService from './RouteService';
-import routes from '../routes';
+import NavbarService from './NavbarService';
+import hideSplashScreen from '../utils/hideSplashScreen';
+import footerDateInitiator from '../utils/footerDateInitiator';
 
-export default class AppService {
-  constructor(content) {
-    this._content = content;
+class AppService {
+  constructor(mainContent) {
+    this.mainContent = mainContent;
   }
 
   async render() {
-    const route = RouteService.getRoute();
-    const page = routes[route];
+    //   get routes
+    const page = RouteService.getPages();
 
-    if (!page) {
-      this._content.innerHTML = '<h1>Not Found</h1>';
-      return;
-    }
+    this.mainContent.innerHTML = await page.render(page.url);
 
-    this._content.innerHTML = page.render();
-    await page.afterRender();
+    await page.afterRender(page.url);
+  }
+
+  static init() {
+    hideSplashScreen();
+
+    // handle navbar
+    const navbarService = new NavbarService({
+      navToggle: document.getElementById('navbar-toggle'),
+      navCollapse: document.querySelector('.navbar-collapse'),
+      navContainer: document.querySelector('.navbar-container'),
+    });
+    navbarService.init();
+
+    // handle footer date
+    footerDateInitiator();
   }
 }
+
+export default AppService;

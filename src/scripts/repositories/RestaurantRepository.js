@@ -1,8 +1,8 @@
-import { CONFIG } from '../config';
+import { BASE_API_URL } from '../config/api-routes';
 
-export default class RestaurantRepository {
-  static async getRestaurants() {
-    const response = await fetch('https://restaurant-api.dicoding.dev/list');
+class RestaurantRepository {
+  static async getAllRestaurants() {
+    const response = await fetch(`${BASE_API_URL}list`);
     const data = await response.json();
 
     if (!response.ok) throw data.message;
@@ -11,7 +11,7 @@ export default class RestaurantRepository {
   }
 
   static async getDetailRestaurant(id) {
-    const response = await fetch(`${CONFIG.BASE_API_URL}detail/${id}`);
+    const response = await fetch(`${BASE_API_URL}detail/${id}`);
     const data = await response.json();
 
     if (!response.ok) throw data.message;
@@ -19,3 +19,5 @@ export default class RestaurantRepository {
     return data.restaurant;
   }
 }
+
+export default RestaurantRepository;

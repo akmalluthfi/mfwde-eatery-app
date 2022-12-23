@@ -1,20 +1,27 @@
-export default class RouteService {
-  static getRoute() {
-    const url = this.parseUrl();
+import routes from '../routes/route';
+import NotFoundPage from '../pages/NotFoundPage';
 
-    return (
-      (url.resource ? `/${url.resource}` : '/') +
-      (url.id ? '/:id' : '') +
-      (url.verb ? `/${url.verb}` : '')
-    );
+class RouteService {
+  static getPages() {
+    const { resource, id, verb } = this.parseUrl();
+
+    const route =
+      (resource ? `/${resource}` : '/') +
+      (id ? '/:id' : '') +
+      (verb ? `/${verb}` : '');
+
+    const page = routes[route] ?? NotFoundPage;
+    page.url = { resource, id, verb };
+
+    return page;
   }
 
   static parseUrl() {
-    const url = location.hash
+    const url = window.location.hash
       .slice(1)
       .toLowerCase()
       .split('/')
-      .filter((url) => url.trim());
+      .filter((urls) => urls.trim());
 
     return {
       resource: url[0] || null,
@@ -23,3 +30,5 @@ export default class RouteService {
     };
   }
 }
+
+export default RouteService;

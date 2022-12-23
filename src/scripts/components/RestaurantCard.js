@@ -3,36 +3,30 @@ class RestaurantCard extends HTMLElement {
     this.render();
   }
 
-  /**
-   * @param {any} restaurant
-   */
-  set restaurant(restaurant) {
-    this._restaurant = restaurant;
-  }
-
-  get restaurant() {
-    return this._restaurant;
+  setRestaurant(restaurant) {
+    this.restaurant = restaurant;
   }
 
   render() {
+    this.classList.add('restaurant-card');
     this.innerHTML = `
-			<article class="restaurant-card">
-				<img
-					src="https://restaurant-api.dicoding.dev/images/small/${this._restaurant.pictureId}"
-					alt="${this._restaurant.name}"
-				/>
-				<div class="body">
-          <h2><a href="#/detail/${this._restaurant.id}">${this._restaurant.name}</a></h2>
-          <h6 class="rating">
-            <i class="fa-solid fa-star"></i>
-            ${this._restaurant.rating}
-            <span class="divider">&bull;</span>
-            ${this._restaurant.city}
-          </h6>
-					<p>${this._restaurant.description}</p>
-				</div>
-			</article>
-		`;
+      <img
+        src="https://restaurant-api.dicoding.dev/images/small/${this.restaurant.pictureId}"
+        alt="${this.restaurant.name}"
+      />
+      <div class="body">
+        <h2>
+          <a href="#/detail/${this.restaurant.id}">${this.restaurant.name}</a>
+        </h2>
+        <h6 class="rating">
+          <i class="fa-solid fa-star"></i>
+          ${this.restaurant.rating}
+          <span class="divider">&bull;</span>
+          ${this.restaurant.city}
+        </h6>
+        <p>${this.restaurant.description}</p>
+      </div>
+    `;
   }
 }
 
