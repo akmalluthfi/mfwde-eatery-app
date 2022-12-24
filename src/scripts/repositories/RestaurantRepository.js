@@ -5,7 +5,7 @@ class RestaurantRepository {
     const response = await fetch(`${BASE_API_URL}list`);
 
     const data = await response.json();
-    if (!response.ok) throw data.message;
+    if (!response.ok) throw Error(data.message);
 
     return data.restaurants;
   }
@@ -14,7 +14,7 @@ class RestaurantRepository {
     const response = await fetch(`${BASE_API_URL}detail/${id}`);
 
     const data = await response.json();
-    if (data.error) throw data.message;
+    if (data.error) throw Error(data.message);
 
     return data.restaurant;
   }

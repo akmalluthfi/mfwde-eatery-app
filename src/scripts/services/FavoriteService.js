@@ -1,21 +1,22 @@
+import FavoriteRepository from '../repositories/FavoriteRepository';
+
 class FavoriteService {
   constructor({ btnFavContainer, restaurant }) {
     this.btnFavContainer = btnFavContainer;
     this.restaurant = restaurant;
-
-    this.testButton = true;
   }
 
-  render() {
-    if (this.isRestaurantExists()) {
+  async render() {
+    if (await this.isRestaurantExists()) {
       this.removeRestaurant();
     } else {
       this.storeRestaurant();
     }
   }
 
-  isRestaurantExists() {
-    return this.testButton;
+  async isRestaurantExists() {
+    const restaurant = await FavoriteRepository.find(this.restaurant.id);
+    return !!restaurant;
   }
 
   removeRestaurant() {
@@ -26,10 +27,9 @@ class FavoriteService {
 
     this.btnFavContainer
       .querySelector('.btn-fav')
-      .addEventListener('click', () => {
+      .addEventListener('click', async () => {
         // remove restaurant
-        this.testButton = false;
-        console.log('removed');
+        await FavoriteRepository.delete(this.restaurant.id);
         // render
         this.render();
       });
@@ -42,10 +42,9 @@ class FavoriteService {
 
     this.btnFavContainer
       .querySelector('.btn-fav')
-      .addEventListener('click', () => {
+      .addEventListener('click', async () => {
         // store restaurant
-        this.testButton = true;
-        console.log('added');
+        await FavoriteRepository.update(this.restaurant);
         // render
         this.render();
       });

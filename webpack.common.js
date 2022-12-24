@@ -64,6 +64,7 @@ module.exports = {
     new GenerateSW({
       swDest: 'sw.js',
       cacheId: 'eatery',
+      disableDevLogs: true,
     }),
   ],
 };

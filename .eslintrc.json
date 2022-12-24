@@ -17,6 +17,6 @@
       { "overrides": { "?": "before", ":": "before" } }
     ],
     "import/no-extraneous-dependencies": 0,
-    "no-console": ["error", { "allow": ["warn", "error"] }]
+    "no-console": ["warn", { "allow": ["warn", "error"] }]
   }
 }

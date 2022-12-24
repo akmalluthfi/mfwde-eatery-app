@@ -1,6 +1,7 @@
 import 'regenerator-runtime';
 import '../styles/main.css';
 import './components/Loader';
+import './components/Error';
 import AppService from './services/AppService';
 
 const app = new AppService(document.getElementById('main-content'));

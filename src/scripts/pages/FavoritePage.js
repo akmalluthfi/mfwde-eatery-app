@@ -1,3 +1,6 @@
+import FavoriteRepository from '../repositories/FavoriteRepository';
+import '../components/RestaurantCard';
+
 class FavoritePage {
   static render() {
     return `
@@ -14,21 +17,26 @@ class FavoritePage {
     `;
   }
 
-  static afterRender() {
+  static async afterRender() {
     const wrapper = document.getElementById('restaurant-list');
 
     try {
-      const restaurants = [];
-      // const restaurants = await RestaurantRepository.getAllRestaurants();
-      if (!restaurants.length) throw Error('No restaurant available');
-      // wrapper.innerHTML = '';
-      // restaurants.forEach((restaurant) => {
-      //   const restaurantCard = document.createElement('restaurant-card');
-      //   restaurantCard.setRestaurant(restaurant);
-      //   wrapper.appendChild(restaurantCard);
-      // });
+      const restaurants = await FavoriteRepository.all();
+
+      if (!restaurants.length) {
+        throw Error('You have no restaurant favorite yet');
+      }
+
+      wrapper.innerHTML = '';
+      restaurants.forEach((restaurant) => {
+        const restaurantCard = document.createElement('restaurant-card');
+        restaurantCard.setRestaurant(restaurant);
+        wrapper.appendChild(restaurantCard);
+      });
     } catch (error) {
-      wrapper.innerHTML = `<h3 style="text-align:center;color:red;margin-top:1rem;grid-column:span 3">${error}</h3>`;
+      const errorMessage = document.createElement('error-message');
+      errorMessage.setMessage(error.message);
+      wrapper.replaceChildren(errorMessage);
     }
   }
 }

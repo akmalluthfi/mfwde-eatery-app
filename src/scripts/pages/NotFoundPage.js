@@ -1,8 +1,10 @@
 class NotFoundPage {
   static render() {
     return `
-      <div class="container error">
-        <h2>Not Found</h2>
+      <div class="container">
+        <div class="error-page">
+          <div class="error">Not Found</div>
+        </div>
       </div>
     `;
   }
