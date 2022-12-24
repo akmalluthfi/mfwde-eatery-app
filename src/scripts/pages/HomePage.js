@@ -18,7 +18,6 @@ class HomePage {
 
   static async afterRender() {
     const wrapper = document.getElementById('restaurant-list');
-
     try {
       const restaurants = await RestaurantRepository.getAllRestaurants();
 
@@ -31,7 +30,7 @@ class HomePage {
         wrapper.appendChild(restaurantCard);
       });
     } catch (error) {
-      wrapper.innerHTML = `<h3 style="text-align:center;color:red;margin-top:1rem;">${error}</h3>`;
+      wrapper.innerHTML = `<h3 style="text-align:center;color:red;margin-top:1rem;grid-column:span 3">${error}</h3>`;
     }
   }
 }

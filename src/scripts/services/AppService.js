@@ -1,7 +1,6 @@
 import RouteService from './RouteService';
 import NavbarService from './NavbarService';
-import hideSplashScreen from '../utils/hideSplashScreen';
-import footerDateInitiator from '../utils/footerDateInitiator';
+import SWRegister from './SWRegisterService';
 
 class AppService {
   constructor(mainContent) {
@@ -9,7 +8,6 @@ class AppService {
   }
 
   async render() {
-    //   get routes
     const page = RouteService.getPages();
 
     this.mainContent.innerHTML = await page.render(page.url);
@@ -18,8 +16,6 @@ class AppService {
   }
 
   static init() {
-    hideSplashScreen();
-
     // handle navbar
     const navbarService = new NavbarService({
       navToggle: document.getElementById('navbar-toggle'),
@@ -29,7 +25,10 @@ class AppService {
     navbarService.init();
 
     // handle footer date
-    footerDateInitiator();
+    document.getElementById('year').innerHTML = new Date().getFullYear();
+
+    // register service worker
+    SWRegister();
   }
 }
 

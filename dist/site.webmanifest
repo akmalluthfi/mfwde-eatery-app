@@ -1,0 +1,33 @@
+{
+  "id": "eatery-v1",
+  "theme_color": "#191e38",
+  "background_color": "#191e38",
+  "display": "standalone",
+  "orientation": "any",
+  "start_url": "./index.html",
+  "name": "Eatery App",
+  "short_name": "Eatery",
+  "description": "Application for get information about restaurant",
+  "icons": [
+    {
+      "src": "./assets/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "./assets/icons/icon-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "./assets/icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "./assets/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

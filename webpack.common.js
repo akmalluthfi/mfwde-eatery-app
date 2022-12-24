@@ -1,6 +1,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
+const { GenerateSW } = require('workbox-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -14,11 +16,8 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.html$/i,
-        loader: 'html-loader',
-      },
-      {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        exclude: [path.resolve(__dirname, 'src/assets/public')],
         type: 'asset/resource',
         generator: {
           filename: 'assets/images/[name]-[hash][ext]',
@@ -45,5 +44,18 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: '[name].bundle.css',
     }),
+    new CopyPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, 'src/assets/public/'),
+          to: path.resolve(__dirname, 'dist/'),
+        },
+        {
+          from: path.resolve(__dirname, 'src/assets/icons/'),
+          to: path.resolve(__dirname, 'dist/assets/icons/'),
+        },
+      ],
+    }),
+    new GenerateSW(),
   ],
 };

@@ -3,8 +3,8 @@ import { BASE_API_URL } from '../config/api-routes';
 class RestaurantRepository {
   static async getAllRestaurants() {
     const response = await fetch(`${BASE_API_URL}list`);
-    const data = await response.json();
 
+    const data = await response.json();
     if (!response.ok) throw data.message;
 
     return data.restaurants;
@@ -12,9 +12,9 @@ class RestaurantRepository {
 
   static async getDetailRestaurant(id) {
     const response = await fetch(`${BASE_API_URL}detail/${id}`);
-    const data = await response.json();
 
-    if (!response.ok) throw data.message;
+    const data = await response.json();
+    if (data.error) throw data.message;
 
     return data.restaurant;
   }
