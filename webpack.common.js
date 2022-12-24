@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const { GenerateSW } = require('workbox-webpack-plugin');
 
@@ -9,7 +10,7 @@ module.exports = {
     app: path.resolve(__dirname, 'src/scripts/index.js'),
   },
   output: {
-    filename: '[name].bundle.js',
+    filename: '[name].min.js',
     path: path.resolve(__dirname, 'dist'),
     clean: true,
   },
@@ -36,13 +37,17 @@ module.exports = {
       },
     ],
   },
+  optimization: {
+    minimizer: ['...', new CssMinimizerPlugin()],
+    minimize: true,
+  },
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: path.resolve(__dirname, 'src/index.html'),
     }),
     new MiniCssExtractPlugin({
-      filename: '[name].bundle.css',
+      filename: '[name].min.css',
     }),
     new CopyPlugin({
       patterns: [
@@ -56,6 +61,9 @@ module.exports = {
         },
       ],
     }),
-    new GenerateSW(),
+    new GenerateSW({
+      swDest: 'sw.js',
+      cacheId: 'eatery',
+    }),
   ],
 };

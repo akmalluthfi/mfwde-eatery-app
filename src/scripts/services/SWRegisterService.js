@@ -3,7 +3,7 @@ const SWRegister = async () => {
     const { Workbox } = await import('workbox-window');
 
     try {
-      const wb = new Workbox('/service-worker.js');
+      const wb = new Workbox('/sw.js');
       await wb.register();
     } catch (error) {
       console.error('Failed to register service worker', error);
