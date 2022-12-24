@@ -63,8 +63,21 @@ module.exports = {
     }),
     new GenerateSW({
       swDest: 'sw.js',
-      cacheId: 'eatery',
+      cacheId: 'static-eatery',
       disableDevLogs: true,
+      clientsClaim: true,
+      skipWaiting: true,
+      runtimeCaching: [
+        {
+          urlPattern: ({ url }) =>
+            // eslint-disable-next-line implicit-arrow-linebreak
+            url.origin === 'https://restaurant-api.dicoding.dev',
+          handler: 'StaleWhileRevalidate',
+          options: {
+            cacheName: 'api-cache',
+          },
+        },
+      ],
     }),
   ],
 };
