@@ -164,7 +164,6 @@ form > .form-group > .form-control {
   border-radius: 0.25rem;
   border-width: 1px;
   display: block;
-  position: relative;
   width: 100%;
 }
 
