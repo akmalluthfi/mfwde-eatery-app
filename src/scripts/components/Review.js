@@ -5,8 +5,6 @@ class Review extends HTMLElement {
     this.render();
 
     this.renderReviewCard();
-
-    this.handleFormSubmit();
   }
 
   renderReviewCard() {
@@ -22,17 +20,6 @@ class Review extends HTMLElement {
       listReviews.innerHTML =
         '<h5 style="color:var(--muted);text-align:center">There are no reviews yet</h5>';
     }
-  }
-
-  handleFormSubmit() {
-    const form = this.querySelector('.form-review form');
-    form.addEventListener('submit', (event) => {
-      event.preventDefault();
-
-      const name = event.target.querySelector('#name').value;
-      const review = event.target.querySelector('#review').value;
-      console.log(name, review);
-    });
   }
 
   setReviews(reviews) {

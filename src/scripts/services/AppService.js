@@ -1,6 +1,6 @@
 import RouteService from './RouteService';
 import NavbarService from './NavbarService';
-import SWRegister from './SWRegisterService';
+// import SWRegister from './SWRegisterService';
 
 class AppService {
   constructor(mainContent) {
@@ -28,7 +28,7 @@ class AppService {
     document.getElementById('year').innerHTML = new Date().getFullYear();
 
     // register service worker
-    SWRegister();
+    // SWRegister();
   }
 }
 

@@ -1,5 +1,5 @@
+import ReviewService from '../services/ReviewService';
 import './MenuList';
-import './Review';
 
 class RestaurantSecondaryInfo extends HTMLElement {
   connectedCallback() {
@@ -13,9 +13,11 @@ class RestaurantSecondaryInfo extends HTMLElement {
     drinkMenus.setMenus('Drinks', this.restaurant.menus.drinks);
     this.appendChild(drinkMenus);
 
-    const review = document.createElement('review-section');
-    review.setReviews(this.restaurant.customerReviews);
-    this.appendChild(review);
+    const reviewService = new ReviewService({
+      wrapper: this,
+      restaurant: this.restaurant,
+    });
+    reviewService.render();
   }
 
   setRestaurant(restaurant) {

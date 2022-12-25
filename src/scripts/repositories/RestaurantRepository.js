@@ -18,6 +18,21 @@ class RestaurantRepository {
 
     return data.restaurant;
   }
+
+  static async addReview(review) {
+    const response = await fetch(`${BASE_API_URL}review`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(review),
+    });
+
+    const data = await response.json();
+    if (data.error) throw Error(data.message);
+
+    return data.customerReviews;
+  }
 }
 
 export default RestaurantRepository;

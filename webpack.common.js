@@ -1,9 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
-const { GenerateSW } = require('workbox-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -37,10 +35,6 @@ module.exports = {
       },
     ],
   },
-  optimization: {
-    minimizer: ['...', new CssMinimizerPlugin()],
-    minimize: true,
-  },
   plugins: [
     new HtmlWebpackPlugin({
       filename: 'index.html',
@@ -58,24 +52,6 @@ module.exports = {
         {
           from: path.resolve(__dirname, 'src/assets/icons/'),
           to: path.resolve(__dirname, 'dist/assets/icons/'),
-        },
-      ],
-    }),
-    new GenerateSW({
-      swDest: 'sw.js',
-      cacheId: 'static-eatery',
-      disableDevLogs: true,
-      clientsClaim: true,
-      skipWaiting: true,
-      runtimeCaching: [
-        {
-          urlPattern: ({ url }) =>
-            // eslint-disable-next-line implicit-arrow-linebreak
-            url.origin === 'https://restaurant-api.dicoding.dev',
-          handler: 'StaleWhileRevalidate',
-          options: {
-            cacheName: 'api-cache',
-          },
         },
       ],
     }),
