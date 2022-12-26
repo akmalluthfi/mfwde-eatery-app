@@ -6,7 +6,7 @@ import RestaurantRepository from '../repositories/RestaurantRepository';
 class DetailPage {
   static render() {
     return `
-      <div class="container">
+      <div class="container" id="main">
         <div class="navigation-title">
           <a href="#"><i class="fa-solid fa-arrow-left fa-lg"></i></a>
           <h1>Restaurant Detail</h1>

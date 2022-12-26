@@ -1,6 +1,6 @@
 import RouteService from './RouteService';
 import NavbarService from './NavbarService';
-// import SWRegister from './SWRegisterService';
+import SWRegister from './SWRegisterService';
 
 class AppService {
   constructor(mainContent) {
@@ -8,6 +8,10 @@ class AppService {
   }
 
   async render() {
+    if (!!window.location.hash && window.location.hash.charAt(1) !== '/') {
+      return;
+    }
+
     const page = RouteService.getPages();
 
     this.mainContent.innerHTML = await page.render(page.url);
@@ -28,7 +32,7 @@ class AppService {
     document.getElementById('year').innerHTML = new Date().getFullYear();
 
     // register service worker
-    // SWRegister();
+    SWRegister();
   }
 }
 

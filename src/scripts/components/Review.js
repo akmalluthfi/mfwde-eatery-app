@@ -54,7 +54,9 @@ class Review extends HTMLElement {
             ></textarea>
           </div>
 
-          <button type="submit" class="btn-add-review">Add New Review</button>
+          <div class="action">
+            <button type="submit" class="btn-add-review">Add New Review</button>
+          </div>
         </form>
       </section>
     `;
