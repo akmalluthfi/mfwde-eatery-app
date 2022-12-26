@@ -4,15 +4,17 @@ import '../components/RestaurantCard';
 class FavoritePage {
   static render() {
     return `
-      <div class="container" id="main">
+      <div class="container">
         <div class="navigation-title">
-          <a href="#"><i class="fa-solid fa-arrow-left fa-lg"></i></a>
+          <a href="#" onclick="window.history.back()"><i class="fa-solid fa-arrow-left fa-lg"></i></a>
           <h1>Favorite Restaurant</h1>
         </div>
 
-        <section class="restaurant-list" id="restaurant-list">
-          <load-effect></load-effect>
-        </section>
+        <div id="main" tabindex="0">
+          <section class="restaurant-list" id="restaurant-list">
+            <load-effect></load-effect>
+          </section>
+        </div>
       </div>
     `;
   }

@@ -6,7 +6,7 @@ class HomePage {
   static render() {
     return `
       <img class="hero-image" src="${Banner}" alt="" />
-      <article class="container restaurant-section" id="main">
+      <article class="container restaurant-section" id="main" tabindex="0">
         <h1 class="title">Explore Restaurant</h1>
 
         <section class="restaurant-list" id="restaurant-list">

@@ -28,6 +28,13 @@ class AppService {
     });
     navbarService.init();
 
+    // handle skip to content
+    const skipLinkElem = document.querySelector('.skip-to-content');
+    skipLinkElem.addEventListener('click', (event) => {
+      event.preventDefault();
+      document.getElementById('main').focus();
+    });
+
     // handle footer date
     document.getElementById('year').innerHTML = new Date().getFullYear();
 

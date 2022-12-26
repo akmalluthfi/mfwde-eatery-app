@@ -59,7 +59,7 @@ class RestaurantMainInfo extends HTMLElement {
         alt="Picture ${this.restaurant.name}"
       />
 
-      <article class="profile">
+      <article class="profile" id="main" tabindex="0">
         <div class="title">
           <h2>${this.restaurant.name}</h2>
           <div id="btn-fav-container">

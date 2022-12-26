@@ -58,6 +58,10 @@ body {
   width: 100%;
 }
 
+#main:focus-visible {
+  outline: none;
+}
+
 .error {
   text-align: center;
   color: red;
