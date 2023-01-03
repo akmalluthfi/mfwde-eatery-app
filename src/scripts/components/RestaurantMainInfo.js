@@ -63,7 +63,7 @@ class RestaurantMainInfo extends HTMLElement {
         <div class="title">
           <h2>${this.restaurant.name}</h2>
           <div id="btn-fav-container">
-            <button class="btn-fav">
+            <button class="btn-fav like">
               <i class="fa-regular fa-heart fa-xl"></i>
             </button>
           </div>

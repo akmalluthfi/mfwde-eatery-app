@@ -15,10 +15,13 @@ class FavoriteRepository {
   }
 
   static async find(id) {
+    if (!id) return false;
     return (await dbPromise).get(OBJECT_NAME, id);
   }
 
   static async update(restaurant) {
+    if (!restaurant.id) return false;
+
     return (await dbPromise).put(OBJECT_NAME, restaurant);
   }
 

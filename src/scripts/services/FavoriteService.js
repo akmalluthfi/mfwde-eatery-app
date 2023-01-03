@@ -15,33 +15,36 @@ class FavoriteService {
   }
 
   async isRestaurantExists() {
-    const restaurant = await FavoriteRepository.find(this.restaurant.id);
+    const { id } = this.restaurant;
+    const restaurant = await FavoriteRepository.find(id);
     return !!restaurant;
   }
 
   removeRestaurant() {
-    // render element
-    this.btnFavContainer.innerHTML = ` <button class="btn-fav">
+    // render like button
+    this.btnFavContainer.innerHTML = `<button class="btn-fav unlike">
       <i class="fa-solid fa-heart fa-xl"></i>
     </button>`;
 
     this.btnFavContainer
-      .querySelector('.btn-fav')
+      .querySelector('.unlike')
       .addEventListener('click', async () => {
         // remove restaurant
-        await FavoriteRepository.delete(this.restaurant.id);
+        const { id } = this.restaurant.id;
+        await FavoriteRepository.delete(id);
         // render
         this.render();
       });
   }
 
   storeRestaurant() {
-    this.btnFavContainer.innerHTML = `<button class="btn-fav">
+    // render unlike button
+    this.btnFavContainer.innerHTML = `<button class="btn-fav like">
       <i class="fa-regular fa-heart fa-xl"></i>
     </button>`;
 
     this.btnFavContainer
-      .querySelector('.btn-fav')
+      .querySelector('.like')
       .addEventListener('click', async () => {
         // store restaurant
         await FavoriteRepository.update(this.restaurant);
