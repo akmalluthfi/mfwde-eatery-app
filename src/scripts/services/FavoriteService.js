@@ -30,7 +30,8 @@ class FavoriteService {
       .querySelector('.unlike')
       .addEventListener('click', async () => {
         // remove restaurant
-        const { id } = this.restaurant.id;
+        const { id } = this.restaurant;
+
         await FavoriteRepository.delete(id);
         // render
         this.render();

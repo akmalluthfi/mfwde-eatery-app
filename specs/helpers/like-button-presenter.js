@@ -19,4 +19,4 @@ const likeButtonPresenter = async (restaurant) => {
   await favoriteService.render();
 };
 
-export { likeButtonPresenter };
+export { likeButtonPresenter, renderButtonContainer };
