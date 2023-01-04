@@ -1,11 +1,16 @@
-import Banner from '../../assets/images/banner.jpg';
 import RestaurantRepository from '../repositories/RestaurantRepository';
 import '../components/RestaurantCard';
 
 class HomePage {
   static render() {
     return `
-      <img class="hero-image" src="${Banner}" alt="" />
+      <picture>
+        <source
+          media="(max-width: 600px)"
+          srcset="./assets/images/banner-small.jpg"
+        />
+        <img load="lazy" class="hero-image" src="./assets/images/banner-large.jpg" alt="Banner" />
+      </picture>
       <article class="container restaurant-section" id="main" tabindex="0">
         <h1 class="title">Explore Restaurant</h1>
 

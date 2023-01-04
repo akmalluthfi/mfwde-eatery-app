@@ -17,7 +17,7 @@
   --white: rgb(255, 255, 255);
   --yellow: #fbbf24;
   --orange: rgb(251, 146, 60);
-  --muted: #a1a1aa;
+  --muted: rgb(100, 116, 139);
   --shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 1px 2px 0 rgb(0 0 0 / 6%);
   --rounded: 0.375rem;
 }
