@@ -4,7 +4,7 @@ Feature('unliking restaurant');
 
 Scenario('delete favorite restaurants', async ({ I }) => {
   I.amOnPage('/');
-  I.seeElement('.restaurant-card');
+  I.waitForVisible('.restaurant-card', 3);
 
   const titles = [];
   // eslint-disable-next-line no-plusplus

@@ -9,7 +9,7 @@ Scenario('showing empty restaurant favorites', ({ I }) => {
 
 Scenario('add favorite restaurant', async ({ I }) => {
   I.amOnPage('/');
-  I.seeElement('.restaurant-card');
+  I.waitForVisible('.restaurant-card');
 
   const restaurantTitle = locate('.restaurant-card .title a');
   const titleFirstRestaurant = await I.grabTextFrom(restaurantTitle);
@@ -18,6 +18,8 @@ Scenario('add favorite restaurant', async ({ I }) => {
   I.click('.like');
 
   I.amOnPage('/#/favorite');
+  I.waitUrlEquals('/#/favorite');
+
   I.dontSee('You have no restaurant favorite yet');
   const titleFirstFavoriteRestaurant = await I.grabTextFrom(restaurantTitle);
   assert.strictEqual(titleFirstRestaurant, titleFirstFavoriteRestaurant);
