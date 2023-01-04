@@ -7,7 +7,7 @@
   margin-bottom: 4rem;
 }
 
-.restaurant-section .title {
+.restaurant-section > .title {
   text-align: center;
   margin-bottom: 2rem;
 }

@@ -15,7 +15,7 @@ class RestaurantCard extends HTMLElement {
         alt="${this.restaurant.name}"
       />
       <div class="body">
-        <h2>
+        <h2 class="title">
           <a href="#/detail/${this.restaurant.id}">${this.restaurant.name}</a>
         </h2>
         <h6 class="rating">
