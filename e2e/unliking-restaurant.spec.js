@@ -1,5 +1,3 @@
-const assert = require('assert');
-
 Feature('unliking restaurant');
 
 Scenario('delete favorite restaurants', async ({ I }) => {
@@ -19,15 +17,14 @@ Scenario('delete favorite restaurants', async ({ I }) => {
   }
 
   I.amOnPage('/#/favorite');
-  I.dontSee('You have no restaurant favorite yet');
 
-  const favoriteTitles = [];
-  // eslint-disable-next-line no-plusplus
-  for (let i = 1; i <= 3; i++) {
-    const restaurantTitles = locate('.restaurant-card .title a').at(i);
-    // eslint-disable-next-line no-await-in-loop
-    favoriteTitles.push(await I.grabTextFrom(restaurantTitles));
-  }
+  I.waitForVisible('.restaurant-card');
+  I.click('.restaurant-card .title a');
 
-  assert.strictEqual(titles.toString(), favoriteTitles.toString());
+  I.waitForVisible('.unlike');
+  I.click('.unlike');
+
+  I.amOnPage('/#/favorite');
+
+  I.waitNumberOfVisibleElements('.restaurant-card', titles.length - 1, 3);
 });

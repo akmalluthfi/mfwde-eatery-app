@@ -1,5 +1,6 @@
 const { merge } = require('webpack-merge');
 const { GenerateSW } = require('workbox-webpack-plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const common = require('./webpack.common');
 
@@ -66,5 +67,6 @@ module.exports = merge(common, {
         },
       ],
     }),
+    new BundleAnalyzerPlugin({ analyzerMode: 'disabled' }),
   ],
 });
